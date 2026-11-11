@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Blocked</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="/newBlocked">New blocked</a>
+        </li>
+        <li>
+            <a href="/">Fooldal</a>
+        </li>
+    </ul>
+    <form method="post">
+        <div class="form-input">
+            <label for="macInput">Mac addr.</label>
+            <input type="text" name="mac" id="macInput">
+            <%if (locals.macErrMessage) {%>
+                <div class="input-error-field">
+                    <p>
+                        <%=macErrMessage%>
+                    </p>
+                </div>
+                <%}%>
+        </div>
+        <div class="input-form">
+            <label for="priorityInput">Priority</label>
+            <input type="number" name="priority" id="priorityInput">
+        </div>
+        <%if (locals.priorityErrMessage) {%>
+            <div class="input-error-field">
+                <p>
+                    <%=priorityErrMessage%>
+                </p>
+            </div>
+            <%}%>
+
+                <div class="form-input">
+                    <label for="enabledInput">Enabled</label>
+                    <input type="checkbox" name="enabled" id="enabledInput">
+                </div>
+                <%if (locals.enabledErrMessage) {%>
+                    <div class="input-error-field">
+                        <p>
+                            <%=enabledErrMessage%>
+                        </p>
+                    </div>
+                    <%}%>
+
+                        <input type="submit" value="Save">
+                        <%if (locals.baseErrMessage) {%>
+                            <div class="input-error-field">
+                                <p>
+                                    <%=baseErrMessage%>
+                                </p>
+                            </div>
+                            <%}%>
+
+    </form>
+</body>
+
+</html>

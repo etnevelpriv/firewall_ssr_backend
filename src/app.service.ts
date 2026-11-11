@@ -23,4 +23,10 @@ this.pool = createPool({
     );
     return response as Blocked_interface[];
   }
+
+  async postBlocked(mac:string, priority:number, enabled:boolean) {
+    await this.pool.execute(
+      "INSERT INTO blocklist (mac, enabled, priority) VALUES (?,?,?)", [mac,enabled,priority]
+    )
+  }
 }
