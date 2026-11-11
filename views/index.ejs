@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Firewall</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID.</th>
+                <th>MAC address</th>
+                <th>Priority</th>
+                <th>Blocked</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%blockeds.forEach((blocked)=> {%>
+                <tr class="<%=blocked.enabled ? 'row-enabled' : 'row-disabled'%>"">
+                    <td>
+                        <%=blocked.id%>
+                    </td>
+                    <td>
+                        <%=blocked.mac%>
+                    </td>
+                    <td>
+                        <%=blocked.priority%>
+                    </td>
+                    <td>
+                        <%=blocked.enabled%>
+                    </td>
+                </tr>
+                <%})%>
+        </tbody>
+    </table>
+</body>
+
+</html>
