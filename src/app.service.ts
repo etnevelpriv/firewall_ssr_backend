@@ -19,7 +19,7 @@ this.pool = createPool({
 
   async getBlockeds() {
     const [response] = await this.pool.execute(
-      "SELECT * FROM blocklist"
+      "SELECT * FROM blocklist order by priority asc"
     );
     return response as Blocked_interface[];
   }

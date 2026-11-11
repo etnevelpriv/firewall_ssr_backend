@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
     <title>Firewall</title>
 </head>
 
@@ -19,7 +20,7 @@
         </thead>
         <tbody>
             <%blockeds.forEach((blocked)=> {%>
-                <tr>
+                <tr class="<%=blocked.enabled ? 'row-enabled' : 'row-disabled'%>"">
                     <td>
                         <%=blocked.id%>
                     </td>
